@@ -2,7 +2,7 @@
 
 1. This repository contains the presentation slides, scripts, and documentation from a training session held on September 7, 2023. 
 2. The session was aimed at the Information Development Department of ChainSea and strategic partners at Anhui Yitongtianxia. 
-3. The material is designed for a one-hour training session focused on the LLaMA-2 model training and a demonstration of fine-tuning the LLaMA-2 7B model using the corporate data from Anhui Yitongtianxia.
+3. The material is designed for a two-hour training session focused on the LLaMA-2 model training and a demonstration of fine-tuning the LLaMA-2 7B model using the corporate data from Anhui Yitongtianxia.
 
 ## Training Session Overview
 
