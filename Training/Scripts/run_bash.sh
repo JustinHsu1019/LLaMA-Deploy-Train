@@ -1,0 +1,22 @@
+CUDA_VISIBLE_DEVICES=1 python src/train_bash.py \
+    --stage sft \
+    --model_name_or_path "E:\models-Llama2-Chinese-7b-Chat" \
+    --do_train \
+    --dataset self_cognition \
+    --template default \
+    --lora_target '[q_proj,k_proj,v_proj,o_proj]' \
+    --finetuning_type lora \
+    --output_dir e50_1108 \
+    --overwrite_cache \
+    --per_device_train_batch_size 4 \
+    --per_device_eval_batch_size 4 \
+    --gradient_accumulation_steps 4 \
+    --lr_scheduler_type cosine \
+    --logging_strategy epoch \
+    --evaluation_strategy epoch \
+    --save_strategy epoch \
+    --val_size 0.1 \
+    --learning_rate 5e-5 \
+    --num_train_epochs 50.0 \
+    --plot_loss True \
+    --fp16
