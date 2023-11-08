@@ -42,4 +42,4 @@ Before beginning with the training, please ensure you have the following:
 
 ## Contact Information
 
-If you have any questions or would like to form a study group to solve problems together, please send an email to [justin.hsu.1019@gmail.com](mailto: justin.hsu.1019@gmail.com).
+If you have any questions or would like to form a study group to solve problems together, please send an email to [justin.hsu.1019@gmail.com](mailto:justin.hsu.1019@gmail.com).
