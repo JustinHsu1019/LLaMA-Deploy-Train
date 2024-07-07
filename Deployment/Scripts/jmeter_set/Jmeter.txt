@@ -1,0 +1,25 @@
+JMeter 模擬
+采用 Apache JMeter 進行請求模擬測試。模擬 100 個用戶分別在 10 秒鐘內開始他們的聊天，持續 10 輪(在接收到 llm 回覆之後，再發送新一輪的對話)。結果如下：
+
+實驗結果表示，每個用戶發送消息後，接收到 LLM 回覆的延遲在 300 ms 以下（接收到 第一個 token 的延遲）。平均每個對話的回覆速度在 33-50 tokens/s。因此，使用 4090 單卡，可以部署一個供約 100 人正常使用的 7B LLM 模型。
+
+JMeter 模擬配置如下：
+
+Thread Group：添加 Number of Threads = 100 個用戶，所有用戶在 Ramp-up period=10 秒內完成請求發送。 我們假設每個用戶進行了 Loop count=10 輪對話。
+
+HTTP Request（sampler）
+constant timer = 2: 每個用戶接受到 LLM 回覆後，會在 2 秒後發送新的請求（模擬打字速度）。
+HTTP Header Manager: 添加 content-type=application/json，post 的 body 統一設置為：
+{
+    "messages":[
+        {"role": "user", "content": "Once a upon time,"}
+    ],
+    "model":"llama-2",
+    "temperature": 0.6,
+    "stream": true,
+    "max_tokens": 2000
+}
+Listener 包括:
+View results tree: 查看每個請求返回結果，確認 LLM 生成的回覆是正確的。
+View results in Table: 查看 request 延遲時間最大值等數據。
+Aggregate Report: 查看平均請求時間等數據。

@@ -1,0 +1,33 @@
+<!-- 1. 畫面太陽春 (依舊 Web 做修改) 2. 同一 Session 隊列問題 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwan-LLama</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/simplebar.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/socket.io.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/simplebar.min.js"></script>
+    <script defer src="js/index.js"></script>
+
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Taiwan-LLama + TGI</h1>
+        <textarea id="outputBox" rows="10" cols="50" readonly data-simplebar class="form-control mb-3"></textarea>
+
+        <div class="output-put">
+            <textarea id="userInput" rows="1" placeholder="輸入 ..." class="form-control"></textarea>
+            <button id="sendButton" class="btn btn-primary">送出</button>
+        </div>
+    </div>
+</body>
+
+</html>
